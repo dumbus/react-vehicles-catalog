@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 
 import './VehiclesList.scss';
 
+import Spinner from '../Spinner/Spinner';
+import Error from '../Error/Error';
 import VehicleCard from '../VehicleCard/VehicleCard';
 
 import VehicleService from '../../service/VehicleService';
 
 const VehiclesList = () => {
   const [vehiclesData, setVehiclesData] = useState([]);
-  // eslint-disable-next-line
   const [isLoading, setLoading] = useState(true);
-  // eslint-disable-next-line
   const [hasError, setError] = useState(false);
 
   const vehicleService = new VehicleService();
@@ -45,12 +45,18 @@ const VehiclesList = () => {
 
   const vehiclesList = renderVehiclesList(vehiclesData);
 
+  const error = hasError ? <Error /> : null;
+  const spinner = isLoading ? <Spinner /> : null;
+  const content = !(isLoading || hasError) ? vehiclesList : null;
+
   return (
     <>
       <div className="vehicles-list container">
         <h2 className="vehicles-list__header">Список автомобилей</h2>
 
-        {vehiclesList}
+        {error}
+        {spinner}
+        {content}
       </div>
     </>
   );

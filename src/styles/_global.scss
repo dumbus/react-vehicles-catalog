@@ -18,7 +18,10 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   max-width: 1140px;
+  min-height: 100vh;
   margin: 0 auto;
 }
 

@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  min-height: 0;
+
+  &__image {
+    max-height: 100%;
+    animation: pulsing 2s ease-in-out infinite;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes pulsing {
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  0% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 419.98px) {
+  .error {
+    &__image {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
