@@ -2,12 +2,14 @@ import React from 'react';
 
 import VehicleService from './service/VehicleService';
 
+import VehiclesList from './components/VehiclesList/VehiclesList';
+
 const vehicleService = new VehicleService();
 
 vehicleService.getVehicles().then(console.log);
 
 const App = () => {
-  return <div>App</div>;
+  return <VehiclesList />;
 };
 
 export default App;
