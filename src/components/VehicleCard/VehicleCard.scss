@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.vehicle-card {
+  padding: 1rem;
+  outline: 2px solid $primary;
+  border-radius: 1rem;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__divider {
+    margin-top: 0.5rem;
+    height: 3px;
+    width: 100%;
+    background-color: $primary;
+    border-radius: 2px;
+  }
+
+  &__description {
+    overflow-wrap: anywhere;
+    margin-top: 0.5rem;
+
+    &-item {
+      display: flex;
+      margin-top: 0.5rem;
+    }
+
+    &-category {
+      width: 150px;
+      font-weight: 700;
+    }
+
+    &-value {
+      flex: 1;
+    }
+  }
+}

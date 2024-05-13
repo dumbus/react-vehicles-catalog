@@ -15,57 +15,12 @@
     margin-top: 1rem;
     list-style: none;
   }
-
-  &__item {
-    padding: 1rem;
-    outline: 2px solid $primary;
-    border-radius: 1rem;
-  }
-
-  &__title {
-    text-align: center;
-  }
-
-  &__divider {
-    margin-top: 0.5rem;
-    height: 3px;
-    width: 100%;
-    background-color: $primary;
-    border-radius: 2px;
-  }
-
-  &__description {
-    overflow-wrap: anywhere;
-    margin-top: 0.5rem;
-
-    &-item {
-      display: flex;
-      margin-top: 0.5rem;
-    }
-
-    &-category {
-      width: 150px;
-      font-weight: 700;
-    }
-
-    &-value {
-      flex: 1;
-    }
-  }
 }
 
 @media (max-width: 991.98px) {
   .vehicles-list {
     &__list {
       grid-template-columns: repeat(2, 1fr);
-    }
-  }
-}
-
-@media (max-width: 576.98px) {
-  .vehicles-list {
-    &__description-category {
-      width: 120px;
     }
   }
 }
