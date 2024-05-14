@@ -44,33 +44,35 @@ const VehiclesList = () => {
     setLoading(false);
   };
 
-  const renderVehiclesList = (vehiclesData) => {
+  const renderContent = (vehiclesData) => {
     const vehiclesItems = vehiclesData.map((vehicleData) => {
       const { id } = vehicleData;
 
       return <VehicleCard key={id} vehicleData={vehicleData} />;
     });
 
-    return <ul className="vehicles-list__list">{vehiclesItems}</ul>;
-  };
-
-  const error = hasError ? <Error /> : null;
-  const spinner = isLoading ? <Spinner /> : null;
-  const content = !(isLoading || hasError)
-    ? renderVehiclesList(vehiclesData)
-    : null;
-
-  return (
-    <>
-      <div className="vehicles-list container">
-        <h2 className="vehicles-list__header">Список автомобилей</h2>
-
+    return (
+      <>
         <Sort
           sortType={sortType}
           setSortType={setSortType}
           sortOrder={sortOrder}
           setSortOrder={setSortOrder}
         />
+
+        <ul className="vehicles-list__list">{vehiclesItems}</ul>
+      </>
+    );
+  };
+
+  const error = hasError ? <Error /> : null;
+  const spinner = isLoading ? <Spinner /> : null;
+  const content = !(isLoading || hasError) ? renderContent(vehiclesData) : null;
+
+  return (
+    <>
+      <div className="vehicles-list container">
+        <h2 className="vehicles-list__header">Список автомобилей</h2>
 
         {error}
         {spinner}

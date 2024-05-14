@@ -13,15 +13,19 @@ html {
 }
 
 body {
+  height: 100%;
   color: $black;
   background-color: $white;
 }
 
-.container {
+.app {
   display: flex;
   flex-direction: column;
-  max-width: 1140px;
   min-height: 100vh;
+}
+
+.container {
+  max-width: 1140px;
   margin: 0 auto;
 }
 

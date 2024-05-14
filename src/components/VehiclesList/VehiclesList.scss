@@ -1,6 +1,9 @@
 @import '../../styles/variables.scss';
 
 .vehicles-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 1rem 0;
 
   &__header {

@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+  background-color: $primary-light;
+
+  &__title {
+    text-align: center;
+  }
+}
