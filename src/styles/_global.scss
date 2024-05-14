@@ -25,6 +25,27 @@ body {
   margin: 0 auto;
 }
 
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 2px solid $primary;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s transform;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (hover: none) {
+  button:hover {
+    transform: none;
+  }
+}
+
 /* // Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
   .container {
@@ -54,6 +75,6 @@ body {
 @media (max-width: 575.98px) {
   .container {
     max-width: auto;
-    padding: 1rem;
+    padding: 0 2rem;
   }
 }

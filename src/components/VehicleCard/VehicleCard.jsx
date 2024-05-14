@@ -65,7 +65,7 @@ const VehicleCard = ({ vehicleData }) => {
       style={{ display: `${show ? 'block' : 'none'}` }}
     >
       <input
-        className={`vehicle-card__title ${isEdit ? 'edit' : ''}`}
+        className={`vehicle-card__title input ${isEdit ? 'edit' : ''}`}
         onChange={(event) => handleChange(titleInputRef, event)}
         onKeyDown={(event) => handleKeyDown(titleInputRef, event)}
         value={titleValue}
