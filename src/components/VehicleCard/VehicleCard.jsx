@@ -79,7 +79,15 @@ const VehicleCard = ({ vehicleData }) => {
       <div className="vehicle-card__description">
         <div className="vehicle-card__description-item">
           <div className="vehicle-card__description-category">Цвет:</div>
-          <div className="vehicle-card__description-value">{color}</div>
+          <div className="vehicle-card__description-value color">
+            <div
+              className="vehicle-card__description-value color__figure"
+              style={{ backgroundColor: color }}
+            />
+            <div className="vehicle-card__description-value color__text">
+              {`(${color})`}
+            </div>
+          </div>
         </div>
 
         <div className="vehicle-card__description-item">
