@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+## Тестовое задание на позицию Frontend-разработчик для ООО Траектория
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![react version](https://img.shields.io/badge/react-18.3.1-blue)
+![sass version](https://img.shields.io/badge/sass-1.77.1-blue)
+![eslint version](https://img.shields.io/badge/eslint-8.57.0-blue)
+![prettier version](https://img.shields.io/badge/prettier-3.2.5-blue)
+![react-yandex-maps version](https://img.shields.io/badge/react--yandex--maps-1.2.5-blue)
 
-## Available Scripts
+## Использованные технологии и инструменты
 
-In the project directory, you can run:
+### 1. [React](https://react.dev/)
 
-### `npm start`
+React - это JavaScript-библиотека для создания пользовательских интерфейсов, позволяющая разработчикам создавать мощные и динамические веб-приложения с использованием компонентов
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. [SCSS](https://sass-lang.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+SASS/SCSS - это препроцессор CSS, который позволяет использовать переменные, миксины, вложенные селекторы и другие возможности для упрощения написания и управления стилями в веб-приложениях
 
-### `npm test`
+### 3. [ESLint](https://eslint.org/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ESLint - это инструмент статического анализа JavaScript, помогающий выявлять и исправлять потенциальные проблемы в коде, обеспечивая согласованность стиля и улучшая его качество
 
-### `npm run build`
+### 4. [Prettier](https://prettier.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Prettier - это инструмент для форматирования кода, который автоматически приводит код к единому стилю, устраняя недостатки форматирования и делая код более читаемым
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 5. [React-Yandex-maps](https://www.npmjs.com/package/react-yandex-maps)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+react-yandex-maps — это библиотека для интеграции Яндекс.Карт в React-приложения, обеспечивающая удобное использование картографических возможностей Yandex с помощью React-компонентов
 
-### `npm run eject`
+## Что реализовано в приложении
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Получение данных с помощью предоставленного API путем REST-запроса. После получения данных на странице отрисовывается список полученных компонентов объектов в виде карточек с полями:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- За отображение списка компонентов (списка карточек автомобилей) отвечает блок `"Список автомобилей"`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Реализована сортировка объектов по значениям (год выпуска и стоимость):
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- За сортировку отвечает блок с кнопками `"По году выпуска"`, `"По цене"` блоком `"Список автомобилей"`;
+- Первое нажатие на соответствующую кнопку активирует сортировку в порядке возрастания, дальнейшие нажатия на ту же кнопку переключают порядок сортировки.
 
-## Learn More
+3. Реализована возможность редактирования и удаления карточек на фронтенд части (изменение названия марки, модели и стоимости):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- За редактирование карточек отвечают кнопки с пиктограммами `"редактировать/сохранить"`, `"удалить"` внизу карточки автомобиля;
+- При нажатии на кнопку `"редактировать"` для соответствующей карточки разблокируются поля ввода и кнопка меняется на кнопку `"сохранить"`;
+- При нажатии на кнопку `"сохранить"` изменения карточки сохраняются, поля ввода блокируются.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Реализовано отображение объектов на карте по полученным координатам (Использован [API Яндекс.Карт](https://yandex.ru/maps-api/products/js-api)):
 
-### Code Splitting
+- За отображение объектов на карте отвечает кнопка с пиктограммой `"карта"` внизу карточки автомобиля;
+- При нажатии на кнопку `"карта"` поверх карточки с характеристиками автомобиля отрисовывается интерактивная карта с меткой местоположения автомобиля;
+- При нажатии на кнопку с пиктограммой `"закрыть"` на интерактивной карте, карта закрывается и снова отображается карточка с характеристиками автомобиля.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+5. Реализована адаптивная вёрстка вплоть до экранов мобильных устройств шириной в 320 пикселей
 
-### Analyzing the Bundle Size
+## Как посмотреть на работу приложения
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Сайт развёрнут с помощью GitHub Pages по адресу:
 
-### Making a Progressive Web App
+```
+http://dumbus.github.io/react-vehicles-catalog
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Развернуть приложение локально (см. далее)
 
-### Advanced Configuration
+## Как развернуть приложение локально
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Скопировать репозиторий:
 
-### Deployment
+```
+git clone https://github.com/dumbus/react-vehicles-catalog.git
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Поменять текущую папку:
 
-### `npm run build` fails to minify
+```
+cd react-vehicles-catalog
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Установить зависимости:
+
+```
+npm install
+```
+
+4. Запустить приложение:
+
+```
+npm run start
+```
+
+5. Открыть приложение в браузере:
+
+```
+http://localhost:{port}/react-vehicles-catalog
+```
+
+> По умолчанию port = 3000

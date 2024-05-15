@@ -1,0 +1,123 @@
+@import '../../styles/variables.scss';
+
+.vehicle-card {
+  position: relative;
+  padding: 1rem;
+  outline: 2px solid $primary;
+  border-radius: 1rem;
+
+  input {
+    width: calc(100% - 150px);
+    font-size: 1rem;
+    color: $black;
+    border: none;
+
+    &.edit {
+      outline: 2px solid $primary;
+      border-radius: 2px;
+      cursor: pointer;
+
+      &:focus {
+        outline: 2px solid $primary-dark;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0 auto;
+    font-weight: 700;
+    text-align: center;
+
+    &.input {
+      width: 100%;
+    }
+  }
+
+  &__divider {
+    margin-top: 0.5rem;
+    height: 3px;
+    width: 100%;
+    background-color: $primary;
+    border-radius: 2px;
+  }
+
+  &__description {
+    overflow-wrap: anywhere;
+    margin-top: 0.5rem;
+
+    &-item {
+      display: flex;
+      margin-top: 0.5rem;
+    }
+
+    &-category {
+      width: 150px;
+      font-weight: 700;
+    }
+
+    &-value {
+      flex: 1;
+
+      &.color {
+        display: flex;
+        align-items: center;
+        flex: none;
+        gap: 0.5rem;
+
+        &__figure {
+          outline: 1px solid $black;
+          flex: none;
+
+          border-radius: 100%;
+          height: 1rem;
+          width: 1rem;
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  &__button {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 3000;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+@media (hover: none) {
+  .vehicle-card__button:hover {
+    transform: none;
+  }
+}
