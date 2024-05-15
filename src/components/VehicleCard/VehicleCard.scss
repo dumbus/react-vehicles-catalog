@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .vehicle-card {
+  position: relative;
   padding: 1rem;
   outline: 2px solid $primary;
   border-radius: 1rem;
@@ -92,6 +93,25 @@
 
     &:hover {
       transform: scale(1.2);
+    }
+  }
+
+  &__map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 3000;
+    }
+
+    &.hidden {
+      display: none;
     }
   }
 }

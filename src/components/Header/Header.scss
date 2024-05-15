@@ -5,6 +5,7 @@
   top: 0;
   padding: 1rem 0;
   background-color: $primary-light;
+  z-index: 5000;
 
   &__title {
     text-align: center;

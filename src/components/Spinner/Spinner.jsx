@@ -7,7 +7,7 @@ import spinner from '../../assets/spinner.svg';
 const Spinner = () => {
   return (
     <div className="spinner">
-      <img src={spinner} alt="spinner" />
+      <img className="spinner__img" src={spinner} alt="spinner" />
     </div>
   );
 };

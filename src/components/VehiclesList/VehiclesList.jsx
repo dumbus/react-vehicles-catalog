@@ -9,6 +9,8 @@ import Sort from '../Sort/Sort';
 
 import VehicleService from '../../service/VehicleService';
 
+import { YMaps } from '@pbe/react-yandex-maps';
+
 const VehiclesList = () => {
   const [vehiclesData, setVehiclesData] = useState([]);
   const [isLoading, setLoading] = useState(true);
@@ -76,7 +78,13 @@ const VehiclesList = () => {
 
         {error}
         {spinner}
-        {content}
+        <YMaps
+          query={{
+            apikey: '9dd0753a-924c-4279-8976-c28baa0e1a16'
+          }}
+        >
+          {content}
+        </YMaps>
       </div>
     </>
   );

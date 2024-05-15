@@ -5,6 +5,12 @@ import './VehicleCard.scss';
 import remove from '../../assets/remove.svg';
 import edit from '../../assets/edit.svg';
 import save from '../../assets/save.svg';
+import map from '../../assets/map.svg';
+import cross from '../../assets/cross.svg';
+
+import Spinner from '../Spinner/Spinner';
+
+import { Map, ZoomControl, Placemark } from '@pbe/react-yandex-maps';
 
 const VehicleCard = ({ vehicleData }) => {
   const { id, name, model, color, year, price, latitude, longitude } =
@@ -15,6 +21,8 @@ const VehicleCard = ({ vehicleData }) => {
   const [show, setShow] = useState(true);
   const [titleValue, setTitleValue] = useState(`${name} ${model}`);
   const [priceValue, setPriceValue] = useState(price);
+  const [isMap, setMap] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getLocationMessage = (latitude, longitude) => {
     if (!latitude || !longitude) {
@@ -53,6 +61,14 @@ const VehicleCard = ({ vehicleData }) => {
     if (ref === priceInputRef) {
       setPriceValue(event.target.value);
     }
+  };
+
+  const toggleMap = () => {
+    setMap((isMap) => !isMap);
+  };
+
+  const handleMapLoad = () => {
+    setIsLoading(false);
   };
 
   const titleInputRef = useRef();
@@ -131,6 +147,48 @@ const VehicleCard = ({ vehicleData }) => {
           style={{ backgroundImage: `url(${remove})` }}
           onClick={onRemoveClick}
         />
+        <button
+          className="vehicle-card__button"
+          style={{ backgroundImage: `url(${map})` }}
+          onClick={toggleMap}
+        />
+      </div>
+
+      <div className={`vehicle-card__map ${isMap ? '' : 'hidden'}`}>
+        {isLoading ? <Spinner /> : ''}
+
+        <button
+          className="vehicle-card__button vehicle-card__map-close"
+          style={{ backgroundImage: `url(${cross})` }}
+          onClick={toggleMap}
+        />
+        <Map
+          defaultState={{ center: [latitude, longitude], zoom: 15 }}
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            width: '100%',
+            height: '100%',
+            borderRadius: '1rem',
+            overflow: 'hidden'
+          }}
+          options={{
+            suppressMapOpenBlock: true // Removes the promo button
+          }}
+          onLoad={handleMapLoad}
+        >
+          <ZoomControl options={{ float: 'right' }} />
+          <Placemark
+            geometry={[latitude, longitude]}
+            properties={{
+              iconContent: `${name} ${model}`
+            }}
+            options={{
+              preset: 'islands#blueStretchyIcon'
+            }}
+          />
+        </Map>
       </div>
     </li>
   );
