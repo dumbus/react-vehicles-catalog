@@ -58,7 +58,7 @@ react-yandex-maps — это библиотека для интеграции Я
 1. Сайт развёрнут с помощью GitHub Pages по адресу:
 
 ```
-TODO: <add gh-pages link>
+http://dumbus.github.io/react-vehicles-catalog
 ```
 
 2. Развернуть приложение локально (см. далее)
@@ -92,7 +92,7 @@ npm run start
 5. Открыть приложение в браузере:
 
 ```
-http://localhost:{port}
+http://localhost:{port}/react-vehicles-catalog
 ```
 
 > По умолчанию port = 3000
