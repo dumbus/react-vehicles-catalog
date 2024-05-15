@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-vehicles-catalog/static/css/main.3fa220b2.css",
+    "main.css": "/react-vehicles-catalog/static/css/main.229ba9d2.css",
     "main.js": "/react-vehicles-catalog/static/js/main.5a659b50.js",
     "static/media/spinner.svg": "/react-vehicles-catalog/static/media/spinner.00f27ce4ea31ddc864b8976bcda703ea.svg",
     "static/media/edit.svg": "/react-vehicles-catalog/static/media/edit.683eabbb5b853ac934892f9143ab9978.svg",
@@ -12,11 +12,11 @@
     "static/media/ascending.svg": "/react-vehicles-catalog/static/media/ascending.4aa967bb54596746715a505315cc50f9.svg",
     "static/media/descending.svg": "/react-vehicles-catalog/static/media/descending.6c1941e089d9f1dc87b4d7fdee30438c.svg",
     "static/media/cross.svg": "/react-vehicles-catalog/static/media/cross.b07ef3f80acc151f7a68520d17077f1e.svg",
-    "main.3fa220b2.css.map": "/react-vehicles-catalog/static/css/main.3fa220b2.css.map",
+    "main.229ba9d2.css.map": "/react-vehicles-catalog/static/css/main.229ba9d2.css.map",
     "main.5a659b50.js.map": "/react-vehicles-catalog/static/js/main.5a659b50.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fa220b2.css",
+    "static/css/main.229ba9d2.css",
     "static/js/main.5a659b50.js"
   ]
 }
