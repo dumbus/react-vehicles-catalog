@@ -14,6 +14,13 @@ const MapBlock = ({ isMap, toggleMap, latitude, longitude, name, model }) => {
     setIsLoading(false);
   };
 
+  // Patch to remove defaultProps error from console
+  const error = console.error;
+  console.error = (...args) => {
+    if (/defaultProps/.test(args[0])) return;
+    error(...args);
+  };
+
   return (
     <div className={`map ${isMap ? '' : 'hidden'}`}>
       {isLoading ? <Spinner /> : ''}
