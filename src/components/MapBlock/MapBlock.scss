@@ -28,3 +28,9 @@
     display: none;
   }
 }
+
+@media (hover: none) {
+  .map__button:hover {
+    transform: none;
+  }
+}
