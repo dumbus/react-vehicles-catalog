@@ -1,13 +1,10 @@
 ## Тестовое задание на позицию Frontend-разработчик для ООО Траектория
 
-TODO: Update packages badges  
-![react version](https://img.shields.io/badge/react-18.2.0-brightgreen)
-![react-dom version](https://img.shields.io/badge/react--dom-18.2.0-brightgreen)
-![react-router-dom version](https://img.shields.io/badge/react--router--dom-6.23.0-brightgreen)
-![react-scripts version](https://img.shields.io/badge/react--scripts-5.0.1-brightgreen)
-![sass version](https://img.shields.io/badge/sass-1.75.0-brightgreen)
-![eslint version](https://img.shields.io/badge/eslint-8.57.0-brightgreen)
-![prettier version](https://img.shields.io/badge/prettier-3.2.5-brightgreen)
+![react version](https://img.shields.io/badge/react-18.3.1-blue)
+![sass version](https://img.shields.io/badge/sass-1.77.1-blue)
+![eslint version](https://img.shields.io/badge/eslint-8.57.0-blue)
+![prettier version](https://img.shields.io/badge/prettier-3.2.5-blue)
+![react-yandex-maps version](https://img.shields.io/badge/react--yandex--maps-1.2.5-blue)
 
 ## Использованные технологии и инструменты
 
