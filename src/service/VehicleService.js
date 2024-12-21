@@ -1,8 +1,11 @@
 class VehicleService {
-  _apiBaseUrl = 'https://test.tspb.su/test-task';
+  _apiBaseUrl = 'https://api.jsonsilo.com/public';
+  _apiSecret = process.env.REACT_APP_API_SECRET;
+
   _fetchOptions = {
     method: 'GET',
     headers: {
+      'X-SILO-KEY': this._apiSecret,
       accept: 'application/json'
     }
   };
@@ -18,7 +21,9 @@ class VehicleService {
   };
 
   getVehicles = async () => {
-    const results = await this.getResource(`${this._apiBaseUrl}/vehicles`);
+    const results = await this.getResource(
+      `${this._apiBaseUrl}/49c88214-2607-44dc-b6d0-c1ad62ccc4bc`
+    );
 
     return results.map(this._transformVehicle);
   };
