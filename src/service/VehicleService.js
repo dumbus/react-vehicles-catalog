@@ -1,17 +1,13 @@
 class VehicleService {
-  _apiBaseUrl = 'https://api.jsonsilo.com/public';
-  _apiSecret = process.env.REACT_APP_API_SECRET;
+  _apiBaseUrl = 'https://raw.githubusercontent.com/dumbus';
+  _repoName = 'react-vehicles-catalog';
+  _branchName = 'json-data';
+  _fileName = 'react-vehicles-catalog-data.json';
 
-  _fetchOptions = {
-    method: 'GET',
-    headers: {
-      'X-SILO-KEY': this._apiSecret,
-      accept: 'application/json'
-    }
-  };
+  _fullFilePath = `${this._apiBaseUrl}/${this._repoName}/${this._branchName}/${this._fileName}`;
 
   getResource = async (url) => {
-    const response = await fetch(url, this._fetchOptions);
+    const response = await fetch(this._fullFilePath);
 
     if (!response.ok) {
       throw new Error(`Could not fetch ${url}, status: ${response.status}`);
